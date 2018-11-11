@@ -9,11 +9,16 @@ class App extends Component {
         todos: [
           { description: 'Walk the cat', isCompleted: true },
           { description: 'Throw the dishes away', isCompleted: false },
-          { description: 'Buy new dishes', isCompleted: false }
-        ],
+          { description: 'Buy new dishes', isCompleted: false }],
         newTodoDescription: ''
       };
     }
+
+    deleteToDo() {
+      console.log('hi');
+    }
+
+
 
     handleChange(e) {
      this.setState({ newTodoDescription: e.target.value })
