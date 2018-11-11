@@ -45,6 +45,7 @@ class App extends Component {
         <ul>
         { this.state.todos.map( (todo, index) =>
           <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ this.toggleComplete } />
+          <ToDo key= deleteToDo=(this.deleteToDo) />
         )}
         </ul>
         <form onSubmit={ (e) => this.handleSubmit(e) }>
