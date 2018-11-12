@@ -15,14 +15,12 @@ class App extends Component {
     }
 
     deleteToDo(deleteToDo) {
-      console.log('hi');
+      console.log(this);
       let newToDos = this.state.todos.filter((todo) => {
         return todo !== deleteToDo
       } )
       this.setState({ todos: newToDos });
     }
-
-
 
     handleChange(e) {
      this.setState({ newTodoDescription: e.target.value })
@@ -48,7 +46,7 @@ class App extends Component {
       <div className="App">
         <ul>
         { this.state.todos.map( (todo, index) =>
-          <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ this.toggleComplete } deleteToDo= {this.deleteToDo} />
+          <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ this.toggleComplete } deleteToDo={() => this.deleteToDo(todo)} />
 
         )}
         </ul>
